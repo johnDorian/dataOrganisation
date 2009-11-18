@@ -1,4 +1,5 @@
 \documentclass[5p]{elsarticle}
+\usepackage{graphicx}
 
 \begin{document}
 \begin{frontmatter}
@@ -26,6 +27,8 @@ The Sydney Catchment Authority is in charge of the drinking water for the metrop
 The data collected from the SCA covers a variety of variables. This paper will only cover EC,TP,TN,and NTU variables.
 
 \begin{center}
+\begin{table}
+\caption[stat]{Summary statistics of data}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 Statistics & EC & TP & TN & NTU & Discharge\\
@@ -38,6 +41,14 @@ Stdev & 0.3& 0.15& 1.00& 140.88&335.10\\
 n & 1125&513 &523 &1314 &1375\\
 \hline
 \end{tabular}
+\end{table}
+\end{center}
+
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.50]{Scatterplotmatrix.pdf}
+\caption{Scatter plot of water quality variables.\it{All variables are log transformed.}}
+\end{figure}
 \end{center}
 
 Simply correlation plots have been created to provide a simple overview between Discharge and each WQ variable.

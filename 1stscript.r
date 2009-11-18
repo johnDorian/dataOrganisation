@@ -51,10 +51,19 @@ pdf("tphist.pdf")
 hist(qual$TP,main="Histogram of total Phosphorus",xlab=expression(paste("Total Phosphours (",mg^-1," L)")))
 dev.off()
 
+###Get rid of samples without flow
+qual <- subset(qual,!is.na(Total))
 ####Summary Time.
 summary(qual)
-sd(t,na.rm=T)
+sd(qual,na.rm=T)
 
+#fix the NTU
+qual$NTU[17] <- NA
+qual$NTU[12] <- NA
+
+pdf("Scatterplotmatrix.pdf")
+pairs(~log(Total+0.1)+log(TP+0.1)+log(TN+0.1)+log(NTU+0.1)+log(EC+0.1),data=qual,labels=c("Discharge","TP","TN","NTU","EC"))
+dev.off()
 
 ####Simple correlation plot
 plot(log(qual$Total+1),log(qual$TP+0.1))
