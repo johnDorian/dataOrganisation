@@ -8,17 +8,11 @@
 	
 	#load the flow data
 flow<-read.csv("212270_JoorilandFlow.csv",header=T,)
-	#fix the dates up
-flow$Date<-paste(as.POSIXlt(strptime(flow$Date,"%d/%m/%Y %H:%M")))
-	#convert the character dates to posixlt
-flow<-data.frame(Date=as.POSIXlt(flow$Date),Total=flow$Total)
-	#make sure it worked
-head(flow)
 #convert the flow into the time series format.
 flow2<-timeseries(flow$Date,"%d/%m/%Y %H:%M",flow$Total)
 #look at the timeseries formatted data
 head(flow2)
-#Now aggregate the data into hourly flow.
+#Now aggregate the data into hourly flow. - getting rid of any hours that have not got complete observations
 flow<-hours.agg(flow2,sum,na.rm=F)
 #Check out the new data
 head(flow)
@@ -37,13 +31,42 @@ qual$Date<-as.POSIXlt(qual$Date)-minutes*60
 	#merge the flow on the qual.
 t<-merge(qual,flow,by="Date")
 #now restore the data frame with the original time
-qual <- data.frame(Date=as.POSIXlt(qual$Date)+minutes*60,t[,2:8])
+qual <- data.frame(Date=as.POSIXlt(qual$Date)+minutes*60,sample=t[,2],pH=t[,3],EC=t[,4],NTU=t[,5],TN=t[,6],TP=t[,7],Total=t[,8])
 #check the new data frame out
 head(qual)
 #It seems to be working...
 
+###change the time stamp, that changes times before 7am to midday.start with using test dataset
+for(i in 1:length(qual[,1])){
+  if(as.numeric(format(as.POSIXlt(qual$Date[i]),"%H"))<7){
+    qual$Date[i] <- strptime(paste(as.numeric(format(as.POSIXlt(qual$Date[i]),"%d")),as.numeric(format(as.POSIXlt(qual$Date[i]),"%m")),as.numeric(format(as.POSIXlt(qual$Date[i]),"%Y")),12,0),"%d %m %Y %H %M")
+    }
+}
 
-###Now have to figure out how to put the samples together.
+####Histogram time.
+pdf("flowhist.pdf")
+hist(qual$Total,main="Histogram of discharge at sampling time",xlab=(expression(paste("Discharge (", ML^-1, " hour)"))))
+dev.off()
+pdf("tphist.pdf")
+hist(qual$TP,main="Histogram of total Phosphorus",xlab=expression(paste("Total Phosphours (",mg^-1," L)")))
+dev.off()
+
+####Summary Time.
+summary(qual)
+sd(t,na.rm=T)
+
+
+####Simple correlation plot
+plot(log(qual$Total+1),log(qual$TP+0.1))
+temp <- subset(qual,!is.na(qual$Total))
+temp <- subset(temp,!is.na(temp$TP))
+tp <- log(temp$TP+0.1)
+total <- log(temp$Total+1)
+abline(glm(tp~total))
+
+
+tp
+sum(tp)
 
 
 
