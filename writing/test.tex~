@@ -47,8 +47,7 @@ n & 1125&513 &523 &1314 &1375\\
 \begin{center}
 \begin{figure}
 \includegraphics[scale=0.50]{Scatterplotmatrix.pdf}
-\caption{Scatter plot of water quality variables.
-\it{All variables are log transformed.}}
+\caption{Scatter plot of water quality variables.\it{All variables are log transformed.}}
 \end{figure}
 \end{center}
 
