@@ -78,9 +78,22 @@ Summ <- summary(qual~sample,data=qual)
 
 
 test <- subset(qual,!is.na(pH))
-summary(test$sample)
-
-
+pH<-summary(test$sample)
+test <- subset(qual,!is.na(EC))
+EC<-summary(test$sample)
+test <- subset(qual,!is.na(TP))
+TP<-summary(test$sample)
+test <- subset(qual,!is.na(TN))
+TN<-summary(test$sample)
+test <- subset(qual,!is.na(NTU))
+NTU<-summary(test$sample)
+#load the xtable library to get this into latex table format
+library(xtable)
+xtable(as.data.frame((cbind(pH,EC,TP,TN,NTU))))
+#load the ggplot2 library
+library(ggplot2)
+q <- qplot(log(qual$Total+0.1),log(qual$TP+0.1))
+q+geom_point(color=qual$sample)
 
 
 ###This section will change the time stamp of the quality values to a 15min time scale and than the two can be joined. - In the sense that if the quality sample is taken within that hour of record flow, than that flow is associated with the quality sample.
