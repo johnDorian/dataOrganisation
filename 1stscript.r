@@ -78,10 +78,114 @@ Summ <- summary(qual~sample,data=qual)
 
 
 test <- subset(qual,!is.na(pH))
-summary(test$sample)
+pH<-summary(test$sample)
+test <- subset(qual,!is.na(EC))
+EC<-summary(test$sample)
+test <- subset(qual,!is.na(TP))
+TP<-summary(test$sample)
+test <- subset(qual,!is.na(TN))
+TN<-summary(test$sample)
+test <- subset(qual,!is.na(NTU))
+NTU<-summary(test$sample)
+#load the xtable library to get this into latex table format
+library(xtable)
+xtable(as.data.frame((cbind(pH,EC,TP,TN,NTU))))
+#load the ggplot2 library
+library(ggplot2)
+q <- ggplot(log(qual$Total+0.1),log(qual$TP+0.1))
+q+geom_point(color=qual$sample)
+
+#Load the lattice library
+library(lattice)
+#Remove NA's from TP column
+temp <- subset(qual,!is.na(TP))
+#Remove N sample type as there is not enough to make an abline
+temp <- subset(temp,sample!="N"|sample!="W")
+#Change 'blank' to Unknown
+temp$sample <- as.character(temp$sample)
+for(i in 1:length(temp[,1])){
+   if(temp$sample[i]=="")
+    temp$sample[i]="Unknown"
+   if(temp$sample[i]=="A")
+    temp$sample[i]="Automatic"
+   if(temp$sample[i]=="F")
+    temp$sample[i]="Flood"
+   if(temp$sample[i]=="R")
+    temp$sample[i]="Monthly"
+   if(temp$sample[i]=="D")
+    temp$sample[i]="Duplicate"
+   if(temp$sample[i]=="S")
+    temp$sample[i]="Ad-hoc grab"
+   if(temp$sample[i]=="C")
+    temp$sample[i]="Event grab"
+  }
+temp$sample <- as.factor(temp$sample)
+
+pdf("sample_tp_scatter.pdf")
+xyplot(log(TP+0.1)~log(Total+0.1)|sample,data=temp,panel=function(x,y){
+  panel.xyplot(x,y)
+  panel.abline(lm(y~x))
+}
+       )
+dev.off()
+
+#Make some pics of the box cox transformation.
+library(MASS)
+temp <- subset(qual,!is.na(TP))
+library(geoR)
+pdf("bc_example_tp.pdf")
+boxcox(temp$TP+0.01~1)
+dev.off()
+boxcox.fit(temp$TP+0.01)
+
+##time to show the denisty plots of eacvh variable
+pdf("histograms.pdf")
+par(mfrow=c(3,2))
+hist(qual$TP,xlab="Total Phosphorous",main="Histogram of Phosphorous")
+hist(qual$TN,xlab="Total Nitrogen",main="Histogram of Nitrogen")
+hist(qual$NTU,xlab="Turbidity", main= "Turbidity")
+hist(qual$EC,xlab="EC",main="Histogram of EC")
+hist(qual$pH,xlab="pH",main="Histogram of pH")
+hist(qual$Total,xlab="Discharge",main="Histogram of discharge at during sampling")
+dev.off()
+
+##Need  to do flow acf pacf.
+head(flow)
+flow2 <- subset(flow,!is.na(Data))
+pdf("acf_pacf.pdf")
+par(mfrow=c(2,1))
+acf(flow2$Data,main="ACF of all dichagre values")
+pacf(flow2$Data,main="PACF of all discharge values")
+dev.off()
+##Need to do semivariograms with clouds for both flow and all the quality variables.
+library(geoR)
+library(TeachingDemos)
+# change the dates to real numbers
+temp <- qual
+num <- qual[,3]
+#Change the dates to distance (days) of each value from the first.
+for(i in 1:length(temp[,1])){
+  num[i]<- (as.numeric(temp$Date[i]-temp$Date[1]))
+}
+#Create a data frame for all the data
+dataa <- data.frame(X=num,Y=1,qual[,4:8])
+#Remove duplicated dates
+dataa <- subset(dataa,!duplicated(dataa[,1]))
+dataa <- subset(dataa,!is.na(TP))
+names(dataa)
+lam <- boxcox.fit(dataa$TP+0.01)
+dataa$TP <- bct(dataa$TP+0.01,lam$lambda)
+#create a spatial object for the next few steps
+temp <- as.geodata(dataa,coords.col=1:2,data.col=6)
+v.tp <- variog(temp,option="cloud")
+mlik <- likfit(temp,ini=c(0.5,0.5))
+pdf("TP_cloud.pdf")
+plot(v.tp,main="Semi-variogram cloud of TP (boxcox transformed lambda=-0.40)")
+lines(mlik,col="red")
+dev.off()
 
 
-
+#Now for the flow
 
 ###This section will change the time stamp of the quality values to a 15min time scale and than the two can be joined. - In the sense that if the quality sample is taken within that hour of record flow, than that flow is associated with the quality sample.
 
