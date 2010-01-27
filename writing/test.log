@@ -1,15 +1,20 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.10.30)  24 NOV 2009 14:52
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.2.24)  27 JAN 2010 15:44
 entering extended mode
+\write18 enabled.
  %&-line parsing enabled.
-**\nonstopmode \input{"/home/jason/Documents/code/dataOrganisation/writing/test
-.tex"}
-(/home/jason/Documents/code/dataOrganisation/writing/test.tex
-(/home/jason/texmf/tex/latex/elsarticle.cls
-Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
+**test.tex
+(./test.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, basque, danish, dutch, finnish, french, german, ngerman, hungarian,
+ italian, bokmal, nynorsk, polish, portuguese, spanish, swedish, ukenglish, loa
+ded.
+(/Users/jasonlessels/Library/texmf/tex/latex/elsarticle.cls
+Document Class: elsarticle 2009/09/17, 1.20b: Elsevier Ltd
 \@bls=\dimen102
-(/usr/share/texmf-texlive/tex/latex/base/article.cls
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,43 +29,55 @@ File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen103
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
+(/usr/local/texlive/2008basic/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 90.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2008/09/08 v0.04l Graphics/color for pdfTeX
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(/usr/share/texmf-texlive/tex/latex/psnfss/pifont.sty
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
 LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/upzd.fd
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
+! Font U/pzd/m/n/10=pzdr at 10.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   relax 
+l.63 {\Pifont{pzd}
+                  }
+? 
 LaTeX Font Info:    Try loading font information for U+psy on input line 64.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/upsy.fd
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
-))
+)
+! Font U/psy/m/n/10=psyr at 10.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   relax 
+l.64 {\Pifont{psy}
+                  }
+? 
+)
 \c@tnote=\count88
 \c@fnote=\count89
 \c@cnote=\count90
@@ -78,10 +95,9 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@enLab=\toks16
 \@sep=\skip43
 \@@sep=\skip44
-
-(/home/jason/Documents/code/dataOrganisation/writing/test.spl)
-(/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
-Package: natbib 2007/02/05 8.0 (PWD)
+ (./test.spl)
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2007/10/30 8.1 (PWD)
 \bibhang=\skip45
 \bibsep=\skip46
 LaTeX Info: Redefining \cite on input line 602.
@@ -91,8 +107,17 @@ LaTeX Info: Redefining \cite on input line 602.
 \openout3 = `test.spl'.
 
 
-(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
-Package: geometry 2002/07/08 v3.2 Page Geometry
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2008/12/21 v4.2 Page Geometry
+
+(/usr/local/texlive/2008basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2007/12/12 v1.6 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/local/texlive/2008basic/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
 \Gm@cnth=\count95
 \Gm@cntv=\count96
 \c@Gm@tempcnt=\count97
@@ -101,12 +126,14 @@ Package: geometry 2002/07/08 v3.2 Page Geometry
 \Gm@odd@mp=\dimen111
 \Gm@even@mp=\dimen112
 \Gm@dimlist=\toks17
-)
-(/usr/share/texmf-texlive/tex/latex/base/fleqn.clo
+
+(/usr/local/texlive/2008basic/texmf-dist/tex/xelatex/xetexconfig/geometry.cfg))
+(/usr/local/texlive/2008basic/texmf-dist/tex/latex/base/fleqn.clo
 File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
 \mathindent=\dimen113
-))
-(/home/jason/Documents/code/dataOrganisation/writing/test.aux)
+)
+\appnamewidth=\dimen114
+) (./test.aux)
 \openout1 = `test.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -121,6 +148,21 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
+ (/usr/local/texlive/2008basic/texmf-dist/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count98
+\scratchdimen=\dimen115
+\scratchbox=\box30
+\nofMPsegments=\count99
+\nofMParguments=\count100
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count101
+\MPscratchDim=\dimen116
+\MPnumerator=\count102
+\everyMPtoPDFconversion=\toks19
+)
+*geometry auto-detecting driver*
+*geometry detected driver: pdftex*
 -------------------- Geometry parameters
 paper: user defined
 landscape: --
@@ -164,13 +206,20 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 17.
+Missing character: There is no I in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 17.
-
+! Font U/pzd/m/n/6=pzdr at 6.0pt not loadable: Metric (TFM) file not found.
+<to be read again> 
+                   relax 
+l.17 \end{frontmatter}
+                      
+? 
+Missing character: There is no I in font nullfont!
 <Scatterplotmatrix.pdf, id=1, 505.89pt x 505.89pt>
 File: Scatterplotmatrix.pdf Graphic file (type pdf)
  <use Scatterplotmatrix.pdf>
@@ -185,109 +234,95 @@ Overfull \hbox (0.94437pt too wide) in paragraph at lines 86--87
 [][] 
  []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2008basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<histograms.pdf, id=18, 505.89pt x 505.89pt>
+<histograms.pdf, id=17, 505.89pt x 505.89pt>
 File: histograms.pdf Graphic file (type pdf)
  <use histograms.pdf>
-Overfull \hbox (0.94437pt too wide) in paragraph at lines 104--105
+Overfull \hbox (0.94437pt too wide) in paragraph at lines 102--103
 [][] 
  []
 
-<bc_example_tp.pdf, id=19, 505.89pt x 505.89pt>
+<bc_example_tp.pdf, id=18, 505.89pt x 505.89pt>
 File: bc_example_tp.pdf Graphic file (type pdf)
  <use bc_example_tp.pdf>
-Overfull \hbox (4.27826pt too wide) in paragraph at lines 119--120
-\OT1/cmr/m/n/10 sec-tion of the re-port will ex-am-ine the au-to-cor-re-la-tion
- within
- []
-
-<acf_pacf.pdf, id=20, 505.89pt x 505.89pt>
+<tp_flow_trans.pdf, id=19, 505.89pt x 505.89pt>
+File: tp_flow_trans.pdf Graphic file (type pdf)
+ <use tp_flow_trans.pdf>
+[2 <./Scatterplotmatrix.pdf> <./sample_tp_scatter.pdf> <./histograms.pdf>]
+<acf_pacf.pdf, id=35, 505.89pt x 505.89pt>
 File: acf_pacf.pdf Graphic file (type pdf)
  <use acf_pacf.pdf>
-Overfull \hbox (0.94437pt too wide) in paragraph at lines 123--124
+Overfull \hbox (0.94437pt too wide) in paragraph at lines 133--134
 [][] 
  []
 
-[2 </home/jason/Documents/code/dataOrganisation/writing/Scatterplotmatrix.pdf> 
-</home/jason/Documents/code/dataOrganisation/writing/sample_tp_scatter.pdf> </h
-ome/jason/Documents/code/dataOrganisation/writing/histograms.pdf>]
 Runaway argument?
  
 ! Paragraph ended before \@xverbatim was complete.
 <to be read again> 
                    \par 
-l.178 }
+l.188 }
        
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+? 
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
 \OT1/cmtt/m/n/10 (estimated) variance parameter sigmasq (partial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
 \OT1/cmtt/m/n/10 (estimated) cor. fct. parameter phi (range
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
 \OT1/cmtt/m/n/10 (fixed) Box-Cox parameter = 1 (no
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
 []\OT1/cmtt/m/n/10 non spatial model: log.L n.params AIC BIC "909"
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
 []\OT1/cmtt/m/n/10 Call: likfit(geodata = temp, ini.cov.pars =
  []
 
 
-Overfull \hbox (17.54144pt too wide) in paragraph at lines 178--179
+Overfull \hbox (17.54144pt too wide) in paragraph at lines 188--189
 [][] 
  []
 
-<TP_cloud.pdf, id=39, 505.89pt x 505.89pt>
-File: TP_cloud.pdf Graphic file (type pdf)
- <use TP_cloud.pdf>
-Overfull \hbox (0.94437pt too wide) in paragraph at lines 187--188
-[][] 
- []
+[3 <./bc_example_tp.pdf> <./tp_flow_trans.pdf> <./acf_pacf.pdf>] [4
 
-[3 </home/jason/Documents/code/dataOrganisation/writing/bc_example_tp.pdf> </ho
-me/jason/Documents/code/dataOrganisation/writing/acf_pacf.pdf>] [4
-
- </home/jason/Documents/code/dataOrganisation/writing/TP_cloud.pdf>]
-(/home/jason/Documents/code/dataOrganisation/writing/test.aux) ) 
+]
+(./test.aux) ) 
 Here is how much of TeX's memory you used:
- 1473 strings out of 95086
- 18476 string characters out of 1183254
- 80869 words of memory out of 1500000
- 4659 multiletter control sequences out of 10000+50000
- 9117 words of font info for 32 fonts, out of 1200000 for 2000
- 28 hyphenation exceptions out of 8191
- 33i,7n,30p,826b,267s stack positions out of 5000i,500n,6000p,200000b,5000s
-</usr/share/tex
-mf-texlive/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr12
-.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/texm
-f-texlive/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1
-/bluesky/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti10.pf
-b></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmti7.pfb></usr/share/texmf-
-texlive/fonts/type1/bluesky/cm/cmti8.pfb></usr/share/texmf-texlive/fonts/type1/
-bluesky/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt8.pf
-b></usr/share/texmf-texlive/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on test.pdf (4 pages, 7252345 bytes).
+ 1854 strings out of 494733
+ 24215 string characters out of 1170938
+ 89489 words of memory out of 3000000
+ 5072 multiletter control sequences out of 10000+50000
+ 8067 words of font info for 29 fonts, out of 3000000 for 5000
+ 188 hyphenation exceptions out of 8191
+ 32i,7n,30p,630b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/c
+mbx10.pfb></usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr10
+.pfb></usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr12.pfb>
+</usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr5.pfb></usr/
+local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr7.pfb></usr/local/
+texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr8.pfb></usr/local/texliv
+e/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/texlive/20
+08basic/texmf-dist/fonts/type1/bluesky/cm/cmti7.pfb></usr/local/texlive/2008bas
+ic/texmf-dist/fonts/type1/bluesky/cm/cmti8.pfb></usr/local/texlive/2008basic/te
+xmf-dist/fonts/type1/bluesky/cm/cmtt10.pfb></usr/local/texlive/2008basic/texmf-
+dist/fonts/type1/bluesky/cm/cmtt8.pfb>
+Output written on test.pdf (4 pages, 1037903 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -91,11 +91,9 @@ It is important to examine the effect of the sample type, on the quality of the 
 
 
 \subsection*{Transformation of data}
-Data related to stream flow in Australia is often highly skewed, due to the nature of the system. It is therefore necessary to transform the data for regression based analysis. The most common technique is the use of the natural log transformation. Various methods are now possible to be used to transform the data. This report will use the flexibility of the box-cox transformation, which can if appropriate use the natural log transformation. The distribution of most of all variables is shown in figure \ref{fig:histograms}.
-
-
-
-Figure \ref{fig:lambda_example} shows the range of possible lambda values for the transformation of total Phosphorous, with 95\% confidence intervals.
+Data related to stream flow in Australia is often highly skewed, due to the nature of the system. It is therefore necessary to transform the data for regression based analysis. The most common technique is the use of the natural log transformation. Various methods are now possible to be used to transform the data. This report will use the flexibility of the box-cox transformation, which can if appropriate use the natural log transformation. The distribution of most of all variables is shown in figure \ref{fig:histograms}.\\
+Figure \ref{fig:lambda_example} shows the range of possible lambda values for the transformation of total Phosphorous, with 95\% confidence intervals.\\
+Figure \ref{fig:transformations} represents two different transformations of total Phosphorous and discharge. The two types of transformations are the natural log, and the box cox transformation. These transformations required positive data, both the TP and the discharge required an additiion of 0.01 to each observation. To perform the the box cox transformation, the geoR and the TeachingDemos packages where used within R. 
 
 
 
@@ -115,8 +113,20 @@ Figure \ref{fig:lambda_example} shows the range of possible lambda values for th
 \end{figure}
 \end{center}
 
+\begin{center}
+\begin{figure}
+\includegraphics[scale=0.45]{tp_flow_trans.pdf}
+\caption{Transformations of total Phosphorous and discharge using log and optimised boxcox transformation.}
+\label{fig:transformations}
+\end{figure}
+\end{center}
+
 \subsection*{Autocorrelation within the data}
-As the data is part of a time series it can be assumed that there is autocorrelation between the samples. This section of the report will examine the autocorrelation within the data. It is possible to investigate the discharge data using transnational time series methods. Spatial semi-variograms will be used to examine the autocorrelation with the water quality variables, and the discharge at the associated with the quality samples. Figure \ref{fig:acf_pacf} shows that there is correlation for up to two hours, and the acf shows that that there is a steady rate of decay of correlation. From using the R package geoR the use of the function likfit was used with the summary of the model given in figure \ref{fig:R_code}.
+As the data is part of a time series it can be assumed that there is autocorrelation between the samples through time. This section of the report will examine the autocorrelation within the data. It is possible to investigate the discharge data using transnational time series methods. Spatial semi-variograms will be used to examine the autocorrelation with the water quality variables, and the discharge at the associated with the quality samples. Figure \ref{fig:acf_pacf} shows that there is correlation for up to two hours, and the acf shows that that there is a steady rate of decay of correlation. 
+
+\subsection*{Autocorrelation examination using spatial techniques}
+As stated earlier the data is temporal, and therefore it is correlated through time, as shown within \ref{fig:acf_pacf}. Due to the nature of the quality samples being unevenly sampled through time, it is not possible to use the traditional time series analysis techniques. This section will outline the process of using the gstat and geoR packages in R to determine LMCR of the data. This section will only focus on the relationship between discharge and total phosphorous, but will use both transformations examined in \ref{fig:transformations}.
+From using the R package geoR the use of the function likfit was used with the summary of the model given in figure \ref{fig:R_code}.
 
 \begin{center}
 \begin{figure}
@@ -182,13 +192,7 @@ likfit(geodata = temp, ini.cov.pars = c(0.5, 0.5))
 
 From the model the semi variogram cloud is shown in figure 
 
-\begin{center}
-\begin{figure}
-\includegraphics[scale=0.5]{TP_cloud.pdf}
-\caption{Semi Variogram cloud of total Phosporous with box-cox transformation (lambda = -0.4). Red line indicates the likfit model.}
-\label{fig:tp_sv}
-\end{figure}
-\end{center}
+
 
 
 \end{document} 
