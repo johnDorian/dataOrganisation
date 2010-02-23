@@ -121,11 +121,16 @@ Figure \ref{fig:transformations} represents two different transformations of tot
 \end{figure}
 \end{center}
 
-\subsection*{Autocorrelation within the data}
+\section*{Autocorrelation within the data}
 As the data is part of a time series it can be assumed that there is autocorrelation between the samples through time. This section of the report will examine the autocorrelation within the data. It is possible to investigate the discharge data using transnational time series methods. Spatial semi-variograms will be used to examine the autocorrelation with the water quality variables, and the discharge at the associated with the quality samples. Figure \ref{fig:acf_pacf} shows that there is correlation for up to two hours, and the acf shows that that there is a steady rate of decay of correlation. 
 
-\subsection*{Autocorrelation examination using spatial techniques}
+\section*{Autocorrelation examination using spatial techniques}
 As stated earlier the data is temporal, and therefore it is correlated through time, as shown within \ref{fig:acf_pacf}. Due to the nature of the quality samples being unevenly sampled through time, it is not possible to use the traditional time series analysis techniques. This section will outline the process of using the gstat and geoR packages in R to determine LMCR of the data. This section will only focus on the relationship between discharge and total phosphorous, but will use both transformations examined in \ref{fig:transformations}.
+
+
+To obtain covari
+
+
 From using the R package geoR the use of the function likfit was used with the summary of the model given in figure \ref{fig:R_code}.
 
 \begin{center}
@@ -138,7 +143,6 @@ From using the R package geoR the use of the function likfit was used with the s
 
 \begin{figure}
 \fbox{
-
 \begin{minipage}{9cm}
 \begin{verbatim}
 
@@ -186,7 +190,7 @@ likfit(geodata = temp, ini.cov.pars = c(0.5, 0.5))
 \end{verbatim}
 \end{minipage}
 }
-\caption[]{R output of likfit model of boxcox transformed TP}
+\caption{R output of likfit model of boxcox transformed TP}
 \label{fig:R_code}
 \end{figure}
 

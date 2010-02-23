@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.2.24)  27 JAN 2010 15:44
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.2.24)  11 FEB 2010 14:28
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -252,10 +252,15 @@ File: bc_example_tp.pdf Graphic file (type pdf)
 File: tp_flow_trans.pdf Graphic file (type pdf)
  <use tp_flow_trans.pdf>
 [2 <./Scatterplotmatrix.pdf> <./sample_tp_scatter.pdf> <./histograms.pdf>]
+Overfull \hbox (11.53044pt too wide) in paragraph at lines 127--127
+[]\OT1/cmr/bx/n/10 Autocorrelation ex-am-i-na-tion us-ing spa-tial tech-niques 
+
+ []
+
 <acf_pacf.pdf, id=35, 505.89pt x 505.89pt>
 File: acf_pacf.pdf Graphic file (type pdf)
  <use acf_pacf.pdf>
-Overfull \hbox (0.94437pt too wide) in paragraph at lines 133--134
+Overfull \hbox (0.94437pt too wide) in paragraph at lines 138--139
 [][] 
  []
 
@@ -264,43 +269,47 @@ Runaway argument?
 ! Paragraph ended before \@xverbatim was complete.
 <to be read again> 
                    \par 
-l.188 }
+l.192 }
        
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--188
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 \OT1/cmtt/m/n/10 (estimated) variance parameter sigmasq (partial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--188
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 \OT1/cmtt/m/n/10 (estimated) cor. fct. parameter phi (range
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--188
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 \OT1/cmtt/m/n/10 (fixed) Box-Cox parameter = 1 (no
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--188
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 []\OT1/cmtt/m/n/10 non spatial model: log.L n.params AIC BIC "909"
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--188
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 []\OT1/cmtt/m/n/10 Call: likfit(geodata = temp, ini.cov.pars =
  []
 
 
-Overfull \hbox (17.54144pt too wide) in paragraph at lines 188--189
+Overfull \hbox (17.54144pt too wide) in paragraph at lines 192--193
 [][] 
  []
 
 [3 <./bc_example_tp.pdf> <./tp_flow_trans.pdf> <./acf_pacf.pdf>] [4
 
 ]
-(./test.aux) ) 
+(./test.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  1854 strings out of 494733
  24215 string characters out of 1170938
@@ -309,18 +318,18 @@ Here is how much of TeX's memory you used:
  8067 words of font info for 29 fonts, out of 3000000 for 5000
  188 hyphenation exceptions out of 8191
  32i,7n,30p,630b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/c
-mbx10.pfb></usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr10
-.pfb></usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr12.pfb>
-</usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr5.pfb></usr/
-local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr7.pfb></usr/local/
-texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr8.pfb></usr/local/texliv
-e/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/texlive/20
-08basic/texmf-dist/fonts/type1/bluesky/cm/cmti7.pfb></usr/local/texlive/2008bas
-ic/texmf-dist/fonts/type1/bluesky/cm/cmti8.pfb></usr/local/texlive/2008basic/te
-xmf-dist/fonts/type1/bluesky/cm/cmtt10.pfb></usr/local/texlive/2008basic/texmf-
-dist/fonts/type1/bluesky/cm/cmtt8.pfb>
-Output written on test.pdf (4 pages, 1037903 bytes).
+</usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmbx10.pfb></
+usr/local/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></usr/l
+ocal/texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/
+texlive/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr5.pfb></usr/local/texliv
+e/2008basic/texmf-dist/fonts/type1/bluesky/cm/cmr7.pfb></usr/local/texlive/2008
+basic/texmf-dist/fonts/type1/bluesky/cm/cmr8.pfb></usr/local/texlive/2008basic/
+texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/texlive/2008basic/texm
+f-dist/fonts/type1/bluesky/cm/cmti7.pfb></usr/local/texlive/2008basic/texmf-dis
+t/fonts/type1/bluesky/cm/cmti8.pfb></usr/local/texlive/2008basic/texmf-dist/fon
+ts/type1/bluesky/cm/cmtt10.pfb></usr/local/texlive/2008basic/texmf-dist/fonts/t
+ype1/bluesky/cm/cmtt8.pfb>
+Output written on test.pdf (4 pages, 1037170 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
