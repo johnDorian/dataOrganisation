@@ -5,8 +5,8 @@
 ###############
 
 ###First section will just load the two data files - quality & flow
-	
-	#load the flow data
+setwd("~/Documents/code/dataOrganisation")
+#load the flow data
 flow<-read.csv("212270_JoorilandFlow.csv",header=T,)
 #convert the flow into the time series format.
 flow2<-timeseries(flow$Date,"%d/%m/%Y %H:%M",flow$Total)
@@ -16,9 +16,11 @@ head(flow2)
 flow<-hours.agg(flow2,sum,na.rm=F)
 #Check out the new data
 head(flow)
-	#load the quality data
+###Save the flow file
+save(flow,file="flow1hr.Rdata",compress=TRUE,compression_level=9)
+#load the quality data
 qual<-read.csv("JWQ.csv",header=T)
-	#fix the dates up
+#fix the dates up
 qual$Date<-paste(strptime(qual$Date,"%d/%m/%Y %H:%M"))
 	#make sure it worked
 head(qual)
@@ -28,10 +30,7 @@ qual<-qual[-1,]
 minutes<-as.numeric(format(as.POSIXlt(qual$Date),"%M"))
 	#change the dates to on the hour
 qual$Date<-as.POSIXlt(qual$Date)-minutes*60
-	#merge the flow on the qual.
-t<-merge(qual,flow,by="Date")
-#now restore the data frame with the original time
-qual <- data.frame(Date=as.POSIXlt(qual$Date)+minutes*60,sample=t[,2],pH=t[,3],EC=t[,4],NTU=t[,5],TN=t[,6],TP=t[,7],Total=t[,8])
+
 #check the new data frame out
 head(qual)
 #It seems to be working...
@@ -42,7 +41,9 @@ for(i in 1:length(qual[,1])){
     qual$Date[i] <- strptime(paste(as.numeric(format(as.POSIXlt(qual$Date[i]),"%d")),as.numeric(format(as.POSIXlt(qual$Date[i]),"%m")),as.numeric(format(as.POSIXlt(qual$Date[i]),"%Y")),12,0),"%d %m %Y %H %M")
     }
 }
-
+	#merge the flow on the qual.
+flowAndQual<-merge(qual,flow,by="Date",all.y=T)
+save(flowAndQual,file="discharge_and_quality.Rdata",compress=TRUE,compression_level=9)
 ####Histogram time.
 pdf("flowhist.pdf")
 hist(qual$Total,main="Histogram of discharge at sampling time",xlab=(expression(paste("Discharge (", ML^-1, " hour)"))))
